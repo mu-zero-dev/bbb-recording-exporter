@@ -11,8 +11,8 @@ require "zlib"
 
 require_relative "lib/interval_tree"
 include IntervalTree
-
-@published_files = File.expand_path(".")
+basePath = ARGV[0]
+@published_files = File.expand_path(basePath)
 
 # Creates scratch directories
 Dir.mkdir("#{@published_files}/presentation") unless File.exist?("#{@published_files}/presentation")
@@ -244,3 +244,4 @@ end
 export_pdf
 
 exit(0)
+
